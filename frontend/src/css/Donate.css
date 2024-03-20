@@ -47,6 +47,7 @@
 }
 .donate_content {
   margin-left: 3rem;
+  
 }
 
 .donate_content img {
@@ -95,11 +96,26 @@
   padding: 30px;
 
   width: 25vw;
-  height: 33rem;
+  height: 35rem;
   position: relative;
   border-radius: 0.9rem;
   min-width: 22rem;
   margin-top: 2rem;
+}
+
+
+.uploadbut{
+  height: 3.5rem;
+  border-radius: 0.9rem;
+  width: 70%;
+  margin-top: 0.8rem;
+  background: rgb(249, 253, 255);
+  color: #000000;
+  text-align: center;
+  align-items: center;
+  margin-left: auto;
+  margin-right:  auto;
+  background-color: #eaf4fc;  
 }
 
 .loginForm2 {

@@ -267,10 +267,10 @@ export default function Donate() {
     <div className="donateeapp">
       <div className="bodyy">
         <div className="donatecont">
-          {/* <div className="donate_instru">
+          <div className="donate_instru">
             <div className="donate_content">
               <h1>Some Important Instructions for Donating</h1>
-              <img data-aos="fade-down-right" src="./medicine.png" alt="" />
+              {/* <img data-aos="fade-down-right" src="./medicine.png" alt="" /> */}
               <div className="points">
                 <p>
                   1.The medicine to be donated should be valid and not expired
@@ -280,7 +280,7 @@ export default function Donate() {
               </div>
             </div>
             <img src="./donmed.jpg" data-aos="fade-right" alt="" srcSet="" />
-          </div> */}
+          </div>
 
           <div className="donate">
             <div data-aos="fade-right" className="donateForm">
@@ -340,20 +340,23 @@ export default function Donate() {
                   value={location}
                   onChange={(e) => handleLocationChange(e)}
                 />
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center' }}>
+                
+              </div>
+              <div className="uploadbut">
+                  <div style={{ display: 'flex' ,alignItems: 'center' , justifyContent:'space-between'}}>
                     <label 
                       htmlFor="file-input" 
                       style={{ 
                         display: 'flex', 
-                        alignItems: 'center', 
+                        
                         cursor: 'pointer', 
-                        margin: 'auto' 
+                        marginLeft: '20px' 
                         }}>
                       <FontAwesomeIcon 
                         icon={faUpload} 
-                        style={{ marginRight: 'auto', 
-                        marginLeft: 'auto' 
+                        style={{ 
+                           paddingTop:'20px'
+                        
                         }} 
                       />
                     </label>
@@ -368,14 +371,16 @@ export default function Donate() {
                       <>
                           <FontAwesomeIcon icon={faEye} 
                             style={{ 
-                              margin: '8px', 
+                              paddingTop:'20px',
+                              marginRight: '20px',
                               display: 'flex', 
-                              alignItems: 'center', 
+                              alignItems: 'right', 
                               cursor: 'pointer', 
-                              margin: 'auto' 
+                               
                             }}
                           onClick={() => setImagePreviewModal(true)}
                           />
+                          
           
                         <Modal
                     // className="Model__Container"
@@ -412,7 +417,6 @@ export default function Donate() {
                     )}
                   </div>
                 </div>
-              </div>
               <div className="leftrightfunc">
                 <button
                   onClick={() => {
