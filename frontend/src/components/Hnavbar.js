@@ -40,11 +40,11 @@ export default function Hnavbar(props) {
               </div>
 
               <div className={`linkscur ${showNavbar && "active"}`}>
-                <Link className="aboutucur " to="/about-us">
+                {/*<Link className="aboutucur " to="/about-us">
                   <span id="Aboutt" style={{ cursor: "pointer" }}>
                     About Us
                   </span>
-                </Link>
+                </Link>*/}
                 <Link className="aboutucurs " to="/profile">
                   <span id="nonev" style={{ cursor: "pointer" }}>
                     Profile
@@ -74,11 +74,11 @@ export default function Hnavbar(props) {
                 <div className="line"></div>
               </div>
               <div className={`links ${showNavbar && "active"}`}>
-                <Link className="aboutu" to="/about-us">
+                {/*<Link className="aboutu" to="/about-us">
                   <span id="Aboutt" style={{ cursor: "pointer" }}>
                     About Us
                   </span>
-                </Link>
+              </Link>*/}
                 <Link className="aboutu" to="/signin">
                   <span id="abcder" style={{ cursor: "pointer" }}>
                     Sign In

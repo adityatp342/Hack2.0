@@ -233,7 +233,7 @@ export default function Inventory() {
   }, []);
 
   const locationInput = document.getElementById("dasdaf");
-  const searchBox = new window.google.maps.places.SearchBox(locationInput);
+  // const searchBox = new window.google.maps.places.SearchBox(locationInput);
 
   //limit renewal time
   const currentDate = new Date();
@@ -241,18 +241,18 @@ export default function Inventory() {
   const daysLeft = Math.round((new Date(reset_date) - currentDate) / millisecondsPerDay);
 
 
-  useEffect(() => {
-    searchBox.addListener("places_changed", () => {
-      const places = searchBox.getPlaces();
+  // useEffect(() => {
+  //   searchBox.addListener("places_changed", () => {
+  //     const places = searchBox.getPlaces();
 
-      if (places && places.length > 0) {
-        // Set the location place to the first result
+  //     if (places && places.length > 0) {
+  //       // Set the location place to the first result
 
-        const selected = places[0].formatted_address;
-        setLocation(selected);
-      }
-    });
-  }, [location]);
+  //       const selected = places[0].formatted_address;
+  //       setLocation(selected);
+  //     }
+  //   });
+  // }, [location]);
 
   return (
     <div className="inventorymain">

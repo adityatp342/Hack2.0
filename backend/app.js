@@ -47,7 +47,7 @@ mongoose.connection.on("error", () => {
 });
 
 //This is a scheduler that discards expired medicines everyday.
-//Do not move this require cron.js before the mongoose connection and app.use code snipped.
+//Do not move this require cron.js before the mongoose connection and app.use code snippet.
 require("./Functions/cron");
 
 const server = app.listen(port, () => {

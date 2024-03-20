@@ -69,20 +69,13 @@ export const AboutUs = () => {
         </p>
         <div className="Aboutimage">
           <div className="imageee">
-            <img src="pranav.jpeg" alt="img" srcset="" />
-            <h2>Pranav Patil</h2>
+            
           </div>
           <div className="imageee">
-            <img src="sam.jpeg" alt="" srcset="" />
-            <h2>Samuel Padmadan</h2>
           </div>
           <div className="imageee">
-            <img src="./paul.jpg" alt="img" srcset="" />
-            <h2>Paul Crescent Palanisamy</h2>
           </div>
           <div className="imageee">
-            <img src="aditya.jpeg" alt="img" srcset="" />
-            <h2>Aditya Patil</h2>
           </div>
         </div>
       </div>

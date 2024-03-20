@@ -453,7 +453,7 @@ export default function Orders() {
                 </p>
                 <p>
                   <span className="medsidspan">Requester :</span>
-                  {card.requester.name}
+                  {card?.requester?.name}
                   <br />
                 </p>
 

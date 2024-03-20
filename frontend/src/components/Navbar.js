@@ -313,7 +313,7 @@ export default function Navbar(props) {
                 <li style={{ color: "black" }} className="navli">
                   Disease Predictions
                 </li>
-              </Link>
+          </Link>
             </div>
           ) : (
             <div>
@@ -360,6 +360,15 @@ export default function Navbar(props) {
               Nearby Hospitals
             </li>
           </Link>
+          <Link className="borderrad" to="/dietrecom">
+            <div className="navimgspace">
+              {" "}
+              <img className="navimg" src="./diet.png" alt="" />
+            </div>
+            <li style={{ color: "black" }} className="navli">
+              Diet
+            </li>
+          </Link>
 
           <Link
             className="borderrad"
@@ -396,7 +405,7 @@ export default function Navbar(props) {
             </li>
           </Link>
 
-          {/* <Link className="borderrad" to="/search-medicines">
+           <Link className="borderrad" to="/search-medicines">
             <div className="navimgspace">   <img
               className="navimg"
               id="seperate"
@@ -408,8 +417,8 @@ export default function Navbar(props) {
               Inventory
             </li>
 
-          </Link> */}
-          {/* <Link className="borderrad" to="/request-medicines">
+          </Link> 
+           <Link className="borderrad" to="/request-medicines">
             <div className="navimgspace">  <FontAwesomeIcon
               className="navimg"
               icon={faCapsules}
@@ -419,15 +428,15 @@ export default function Navbar(props) {
               Request
             </li>
 
-          </Link> */}
+          </Link> 
 
-          {/* <Link className="borderrad" to="/users">
+           <Link className="borderrad" to="/users">
             <div className="navimgspace">  <img className="navimg" src="./peoples.png" alt="" /></div>
             <li style={{ color: "black" }} className="navli">
               Search Users
             </li>
 
-          </Link> */}
+          </Link>
 
           <Link className="borderrad" to="/annoucements">
             <div className="navimgspace">
@@ -485,7 +494,7 @@ export default function Navbar(props) {
                 <li style={{ color: "black" }} className="navli">
                   Disease Predictions
                 </li>
-              </Link>
+          </Link>
             </div>
           ) : (
             <div>
@@ -519,7 +528,7 @@ export default function Navbar(props) {
                 <li style={{ color: "black" }} className="navli">
                   Disease Predictions
                 </li>
-              </Link>
+          </Link>
             </div>
           )}
 
@@ -531,7 +540,7 @@ export default function Navbar(props) {
             <li style={{ color: "black" }} className="navli">
               Nearby Hospitals
             </li>
-          </Link>
+        </Link>
 
           <Link
             className="borderrad"

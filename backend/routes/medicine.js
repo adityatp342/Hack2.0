@@ -121,7 +121,6 @@ router.post("/api/medicine-availablity", async (req, res, next) => {
           { new: true }
         ).then((user) => {
           if (user) {
-            console.log(user)
             res.json({ success: "Request Order placed successfully" });
             //volunteer assignment
             assignVolunteer(data._id, coordinates);

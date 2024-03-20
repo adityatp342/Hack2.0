@@ -37,7 +37,7 @@ import { UserProvider } from "./components/UserContext";
 import Kidneystone from "./components/Kidneystone";
 import GeneralPredict from "./components/GeneralPredict";
 import Chatbot from "./components/Chatbot";
-
+import DietRecommendation from "./components/DietRecommendation";
 function App() {
   const [showvNavbar, setShowvNavbar] = useState(false);
   const handleShowvNavbar = () => {
@@ -78,7 +78,7 @@ function App() {
             <Route path="/appointments" element={<Appointments />}></Route>
             <Route path="/personal-chat" element={<PersonalChat />}></Route>
             <Route path="/community-chat" element={<CommunityChat />}></Route>
-            <Route path="/about-us" element={<AboutUs />}></Route>
+
             <Route path="/search-medicines" element={<Inventory />}></Route>
             <Route path="/annoucements" element={<Annoucement />}></Route>
             <Route path="/nearby-hospitals" element={<Hospitals />}></Route>
@@ -89,6 +89,7 @@ function App() {
             <Route path="/kidneystone" element={<Kidneystone />}></Route>
             <Route path="/chatbot" element={<Chatbot />}></Route>
             <Route path="/generalpredict" element={<GeneralPredict />}></Route>
+            <Route path="/dietrecom" element = {<DietRecommendation />}></Route>
           </Routes>
           <ToastContainer theme="light" />
         </div>

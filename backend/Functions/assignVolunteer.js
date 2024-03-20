@@ -54,7 +54,7 @@ const assign = async (order_id, order_location, assigned_volunteer) => {
         .toString()
         .slice(-4)}. Login to the Medi-Share website to accept it.`;
 
-      // smsNotification(msg, assigned_volunteer.phone_no)
+      smsNotification(msg, assigned_volunteer.phone_no)
       //Need to add assigned based on avg_stars (Rating)
 
       VOLUNTEER.findByIdAndUpdate(

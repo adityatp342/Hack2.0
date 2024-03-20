@@ -44,7 +44,8 @@ router.put("/api/update-volunteer-details/:id", (req, res) => {
     });
 });
 
-router.put("/api/update-doctor-details/:id", (req, res) => {
+router.put("/api/update-doctor-details/:id", async(req, res) => {
+  let doc = await DOCTOR.findById(req.params.id);
   DOCTOR.findByIdAndUpdate(
     req.params.id,
     {

@@ -153,10 +153,12 @@ router.post("/api/donate-medicines", async (req, res, next) => {
       donar,
       requester,
       coordinates,
+      image_url
     } = req.body;
+    console.log(image_url)
     // var coordinates = null
 
-    const data = await ORDER.create({
+    let datatemp = {
       order_type: "donate-order",
       medicines: medicines,
       location: {
@@ -170,7 +172,10 @@ router.post("/api/donate-medicines", async (req, res, next) => {
         date: istDate,
         time: istTime,
       },
-    });
+      image_url : image_url
+    };
+    let data = await ORDER.create(datatemp)
+    console.log(data)
     if (data) {
       await USER.updateOne({ _id: donar }, { $inc: { credits: 100 } });
       res.json({ msg: "Donate Order placed successfully..." });
@@ -184,14 +189,17 @@ router.post("/api/donate-medicines", async (req, res, next) => {
 
 router.post("/api/request-medicines", async (req, res, next) => {
   try {
-    const { cart, medCount, userID, location } = req.body;
+    console.log(req.body)
+    const { medicine_name,expiry_date,quantity,location,requester } = req.body;
+    let medCount = 1;
     const data = await ORDER.create({
       order_type: "request-order",
-      medicines: cart,
+      medicines: medicine_name,
       location: location,
-      requester: userID,
+      requester: requester,
       no_of_medicines: medCount,
     });
+    console.log(data)
     if (data) {
       return res.json({ msg: "Request Order placed successfully." });
     } else {
@@ -258,7 +266,7 @@ router.put("/api/delivery-executed/:order_id", (req, res) => {
       const userName = res.requester.name;
       const user_phone_no = res.requester.phone_no;
       const vol_name = res.assigned_vol.name;
-      var msg = `Hey, ${userName}. Your ORDER ${order_id} has been DELIVERED by volunteer ${vol_name}. Please spare some time to fill the FEEDBACK form in the profile section of the Medi-Share website`;
+      var msg = `Hey, ${userName}. Your ORDER ${order_id} has been DELIVERED by volunteer ${vol_name}. Please spare some time to fill the FEEDBACK form in the profile section of the औषध-Setu website`;
       smsNotification(msg, user_phone_no);
     })
     .catch((err) => {
@@ -333,7 +341,7 @@ router.put("/api/assign-order/:id", (req, res) => {
         const order_type = updatedOrder.order_type;
         const order_id = updatedOrder._id.toString().slice(-4);
         const vol_phone_no = updatedOrder.assigned_vol.phone_no;
-        const msg = `Hey,${vol_name}. You've been assigned a/an ${order_type} ${order_id}. Login to the Medi-Share website to accept it.`;
+        const msg = `Hey,${vol_name}. You've been assigned a/an ${order_type} ${order_id}. Login to the औषध-Setu website to accept it.`;
         smsNotification(msg, vol_phone_no);
       } else {
         res.json({ error: "Order not found" });
@@ -420,8 +428,8 @@ router.put("/api/verify-donate-order/:order_id", (req, res) => {
       const userName = doc.donar.name;
       const user_phone_no = doc.donar.phone_no;
       const vol_name = doc.assigned_vol.name;
-      var msg = `Hey, ${userName}. Your MEDICINES (ORDER ID ${order_id}) has been COLLECTED by volunteer ${vol_name}. Please spare some time to fill the FEEDBACK form in the profile section of the Medi-Share website`;
-      // smsNotification(msg, user_phone_no)
+      var msg = `Hey, ${userName}. Your MEDICINES (ORDER ID ${order_id}) has been COLLECTED by volunteer ${vol_name}. Please spare some time to fill the FEEDBACK form in the profile section of the औषध-Setu website;`
+      smsNotification(msg, user_phone_no)
     });
 });
 
@@ -489,14 +497,14 @@ router.put("/api/volunteer-accept/:id", (req, res) => {
         ? doc.donar.phone_no
         : doc.requester.phone_no;
       const vol_name = doc.assigned_vol.name;
-      var msg = `Hey, ${userName}. Your order ${order_id} has been assigned to ${vol_name}.`;
+      var msg = `Hey, ${userName}. Your order ${order_id} has been assigned to ${vol_name}.;`
       if (doc.order_type === "donate-order") {
         msg += " The medicines will be collected soon.";
       } else if (doc.order_type === "request-order") {
         msg += " The order will be delivered soon.";
       }
 
-      // smsNotification(msg, user_phone_no)
+      smsNotification(msg, user_phone_no)
     })
     .catch((err) => {
       console.error(err);

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { API_BASE_URL } from "../config";
 import "../css/FilterOrders.css";
+import Modal from "react-modal";
+
 
 export default function FilterOrders() {
   const [allOrders, setAllOrders] = useState([]);
@@ -16,7 +18,7 @@ export default function FilterOrders() {
   const [filterVolunteerName, setFilterVolunteerName] = useState("");
   const [sortBy, setSortBy] = useState("");
   const [sortDirection, setSortDirection] = useState("asc");
-
+  const [viewMeds, setViewMeds] = useState(false)
   useEffect(() => {
     fetchAllOrders();
   }, []);
@@ -343,8 +345,60 @@ export default function FilterOrders() {
                     <span className="analyticspan">Feedback Stars :</span>
                   </p>
                   <p>{order.feedback.stars}</p>
+
+                  <div>
+                    {order?.image_url && (
+                      <>
+                        <button
+                          onClick={() => setViewMeds(true)}
+                          style={{ 
+                            backgroundColor: 'blue', 
+                            color: 'white', 
+                            border: 'none', 
+                            borderRadius: '4px', 
+                            padding: '8px 16px', 
+                            cursor: 'pointer',
+                            margin: '50px' 
+                          }}
+                        >
+                          View
+                        </button>                        <Modal
+                          className="Modal__container"
+                          isOpen={viewMeds}
+                          onRequestClose={() => setViewMeds(false)}
+                          style={{
+                            overlay: {
+                              zIndex: 9999,
+                            },
+                            content: {
+                              zIndex: 9999,
+                            },
+                            content: {
+                              width: '50%',
+                              height: '50%',
+                              margin: 'auto',
+                            }
+                          }}
+                        >
+                          <img
+                            src={order.image_url}
+                            alt="MedImage"
+                            style={{
+                              maxWidth: '100%',
+                              maxHeight: '100%',
+
+                            }}
+                          />
+                          <button onClick={() => setViewMeds(false)}>Close</button>
+                        </Modal>
+                      </>
+                    )}
+                  </div>
+
                 </div>
+
               </div>
+
             ))}
           </div>
         </div>

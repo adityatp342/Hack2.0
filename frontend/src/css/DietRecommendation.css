@@ -1,0 +1,59 @@
+.dietmain {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dietmain h2 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .dietmain input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .dietimgpred {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #dietimgpred button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #dietimgpred button:hover {
+    background-color: #45a049;
+  }
+  
+  .dietresult {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  #traarports {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #traarports:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add any additional styling based on your design requirements */
+  
